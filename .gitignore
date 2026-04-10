@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code local settings (machine-specific paths and permission grants)
+.claude/settings.local.json
+
+# Inbox archive contents (processed personal data, not part of the template)
+inbox/_archive/**
+!inbox/_archive/.gitkeep
