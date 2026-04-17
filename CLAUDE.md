@@ -56,7 +56,10 @@ bro-os/
 0. **Todo triage (FASE 0).** Grep for overdue and today's tasks. Surface them. User says done/drop/snooze. Bro writes to source files. Reminds user to check `meta/todos.md` for the rest.
 1. **Context understanding.** Read each inbox file in full. Form interpretation hypothesis. Search vault for relevant files.
 2. **Enrichment.** Auto-enrich first. Identify blocking gaps (ask user, max 3/file) and non-blocking gaps (create `#follow-up` to-do, proceed).
-3. **Processing.** Append/create `/notes` files with `<!-- APPEND YYYY-MM-DD from [[source]] -->` markers. Apply tags. Archive originals to `/inbox/_archive/YYYY-MM/`.
+3. **Processing.**
+   - **Inbox file enrichment (before archiving):** for every inbox file, add a `## Discussion (enriched)` section immediately below the raw notes section. Keep raw notes intact and unchanged. The enriched section: interprets terse notes, links entities with `[[wikilink]]`, surfaces implicit decisions and open questions, identifies connections to existing vault. Also fill in Decisions taken, Action items, Open questions if deducible. This makes the archive self-contained and readable.
+   - Append/create `/notes` files with `<!-- APPEND YYYY-MM-DD from [[source]] -->` markers. Apply tags.
+   - Archive enriched file to `/inbox/_archive/YYYY-MM/` using Write (copy) + Bash `rm` (delete original). Both steps are mandatory — never leave originals in `/inbox/` after processing.
 
 Bro can autonomously: append, create, link, tag (with explicit declaration of new tags).
 Bro cannot: delete, rename, merge files. Those require explicit user approval in the weekly.
