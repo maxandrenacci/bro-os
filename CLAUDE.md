@@ -61,6 +61,8 @@ bro-os/
    - Append/create `/notes` files with `<!-- APPEND YYYY-MM-DD from [[source]] -->` markers. Apply tags.
    - Archive enriched file to `/inbox/_archive/YYYY-MM/` using Write (copy) + Bash `rm` (delete original). Both steps are mandatory — never leave originals in `/inbox/` after processing.
 
+**Task placement:** each task has a single canonical location — the most specific/actionable note for that task. Cross-file references use prose (e.g., *"Customer interviews → see [[scalapay_banking_model]]"*), not task syntax. This prevents duplicates in `meta/todos.md`.
+
 Bro can autonomously: append, create, link, tag (with explicit declaration of new tags).
 Bro cannot: delete, rename, merge files. Those require explicit user approval in the weekly.
 
@@ -100,6 +102,8 @@ New content here.
 ```
 
 The marker is an HTML comment: invisible in Obsidian preview, visible in source. Weekly refactoring uses these markers to identify what to consolidate.
+
+**Exception — first-time creation:** if a file is being created for the first time during the same daily session, skip the marker and write content directly. The marker has no differential value when there is no pre-existing core.
 
 ## 6. Tag taxonomy — emergent, not pre-defined
 
