@@ -53,11 +53,9 @@ last_updated: 2026-04-10
 
 | Tag | First seen | File count | Last used | Operational definition |
 |---|---|---|---|---|
-| `#project_x` | — | 0 | — | Placeholder for the user's primary active project. Rename at first weekly to reflect real project name. |
 | `#economics` | — | 0 | — | Financial analysis, margins, ROE, unit economics, P&L. Broad domain — prefer over narrow specifics like #margin. |
 | `#research` | — | 0 | — | Customer research, UX research, user interviews, JTBD framework. |
 | `#legal` | — | 0 | — | Licensing, regulatory requirements, compliance, legal structure, regulatory filings. |
-| `#design` | — | 0 | — | UX design, prototyping, fake door testing, design methods and tooling. |
 | `#analytics` | — | 0 | — | Data analytics, BI tools, business analytics. |
 
 ---
