@@ -61,18 +61,6 @@ sort by due
 
 ---
 
-## 🎯 By project
-
-### Project X
-
-```tasks
-not done
-tag includes #project_x
-sort by due
-group by file
-```
-
----
 
 ## 📋 No due date — backlog
 
