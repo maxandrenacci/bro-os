@@ -63,6 +63,8 @@ bro-os/
 
 **Task placement:** each task has a single canonical location — the most specific/actionable note for that task. Cross-file references use prose (e.g., *"Customer interviews → see [[scalapay_banking_model]]"*), not task syntax. This prevents duplicates in `meta/todos.md`.
 
+**Tool call parallelization:** when writing to multiple files in the same operation (e.g., adding tasks to N files), Read all target files in parallel first, then Edit all in parallel. Never execute Reads and Edits sequentially when they can be batched. This cuts latency proportionally to N.                            
+
 Bro can autonomously: append, create, link, tag (with explicit declaration of new tags).
 Bro cannot: delete, rename, merge files. Those require explicit user approval in the weekly.
 
@@ -135,6 +137,8 @@ Every weekly refactoring includes a **Meta-review of system rules** section. Bro
 - Is the tag taxonomy converging or diverging?
 
 If empirical evidence suggests an adjustment, Bro proposes it explicitly in the weekly report with: (a) what to change, (b) specific evidence from the current vault, (c) expected impact. **Never modifies system rules without user's explicit approval.**
+
+**Whenever a rule change is applied** (in weekly or ad hoc), Bro must: (1) apply it immediately to the relevant file (`CLAUDE.md` or other), (2) notify user explicitly — which file, which section, what changed — so they can sync GitHub. 
 
 ## 8. Outputs
 
