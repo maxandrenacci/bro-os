@@ -60,6 +60,7 @@ bro-os/
    - **Inbox file enrichment (before archiving):** for every inbox file, add a `## Discussion (enriched)` section immediately below the raw notes section. Keep raw notes intact and unchanged. The enriched section: interprets terse notes, links entities with `[[wikilink]]`, surfaces implicit decisions and open questions, identifies connections to existing vault. Also fill in Decisions taken, Action items, Open questions if deducible. This makes the archive self-contained and readable.
    - Append/create `/notes` files with `<!-- APPEND YYYY-MM-DD from [[source]] -->` markers. Apply tags.
    - Archive enriched file to `/inbox/_archive/YYYY-MM/` using Write (copy) + Bash `rm` (delete original). Both steps are mandatory — never leave originals in `/inbox/` after processing.
+**Before archiving:** convert all task syntax (`- [ ]`, `- [x]`) in the inbox file to prose (e.g., `→ Action: ...`). The Tasks plugin scans all vault files including `_archive/` — leaving task syntax in archived files creates duplicates in `meta/todos.md`. 
 
 **Task placement:** each task has a single canonical location — the most specific/actionable note for that task. Cross-file references use prose (e.g., *"Customer interviews → see [[scalapay_banking_model]]"*), not task syntax. This prevents duplicates in `meta/todos.md`.
 
