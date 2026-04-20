@@ -49,6 +49,17 @@ group by due
 
 ---
 
+## 📆 Later — beyond 7 days                                            
+
+```tasks                                                               
+not done                                                        
+due after in 7 days                                             
+sort by due                                                     
+group by due                                                    
+```                                                             
+
+---       
+
 ## 🔍 Follow-ups — from daily enrichment
 
 > These are open questions and verifications created by Bro during daily processing. They need your input to close.
