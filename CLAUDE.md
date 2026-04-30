@@ -108,6 +108,8 @@ The marker is an HTML comment: invisible in Obsidian preview, visible in source.
 
 **Exception — first-time creation:** if a file is being created for the first time during the same daily session, skip the marker and write content directly. The marker has no differential value when there is no pre-existing core.
 
+**Linked notes — never duplicate the section.** When appending to an existing file, **do not include a new `## Linked notes` section in the appended block**. Two options: (a) skip the section entirely in the appended block — the existing one stays as-is and gets updated at next weekly; (b) edit the existing `## Linked notes` section in place to add the new wikilinks. Default: (a). Adding a parallel `## Linked notes` per APPEND creates structural duplication that requires manual cleanup at weekly.
+
 ## 6. Tag taxonomy — emergent, not pre-defined
 
 **The only fixed tags are type tags.** Everything else emerges from real documentation.
