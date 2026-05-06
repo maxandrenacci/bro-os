@@ -5,6 +5,7 @@ kind: meeting
 attendees: []
 project:
 processed: false
+enriched: false
 ---
 
 # Meeting — [TOPIC]
