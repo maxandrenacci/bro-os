@@ -53,6 +53,8 @@ bro-os/
 
 **Speed 2 — Daily processing (evening, ~10-15 min).** Run `/daily` in Claude Code. Pipeline: FASE 0 (todo triage) + 3 processing phases. Full spec in `meta/prompts/daily_processing.md`.
 
+**Standalone enrichment via `/enrich`.** A partial of the daily that runs only FASE 1+2 (context understanding + in-file enrichment) on inbox files, without archive or processing into `/notes`. Useful right after a meeting, or to split workload. Each inbox file carries an `enriched:` frontmatter flag (`false` by default, `YYYY-MM-DD` once enriched). Both `/enrich` and `/daily` honor this flag: if `enriched` is a date, FASE 1+2 are skipped — `/daily` then reuses the existing `## Discussion (enriched)` section as input for FASE 3. Full spec in `meta/prompts/enrich.md`
+
 0. **Todo triage (FASE 0).** Grep for overdue and today's tasks. Surface them. User says done/drop/snooze. Bro writes to source files. Reminds user to check `meta/todos.md` for the rest.
   1. **Context understanding.** Read each inbox file in full. Form interpretation hypothesis. Use `meta/memory.md` as the primary source for existing vault context — it is kept accurate by the weekly and reflects the current state of all active notes. Open vault notes only if: (a) you will modify them, or (b) `memory.md` is genuinely insufficient for the specific enrichment needed. Never read vault notes "for safety". This keeps session token cost bounded as the vault grows. 
 2. **Enrichment.** Auto-enrich first. Identify blocking gaps (ask user, max 3/file) and non-blocking gaps (create `#follow-up` to-do, proceed).
