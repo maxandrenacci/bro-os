@@ -51,6 +51,8 @@ Poi esegui la pipeline a 4 fasi: prima la FASE 0 (todo triage), poi le 3 fasi di
 
 Per ogni file in `/inbox/`:
 
+**Anti-rework via `enriched`.** Leggi prima il frontmatter. Se `enriched: YYYY-MM-DD` è valorizzato (probabilmente da una sessione `/enrich` precedente), **skippa FASE 1 + FASE 2** per quel file e usa la sezione `## Discussion (enriched)` esistente come base per la FASE 3. Se `enriched: false` o assente → procedi normalmente con FASE 1+2 e setta il flag a fine FASE 2 prima di passare alla 3.
+
 1. Leggi il file grezzo per intero.
 2. Identifica esplicitamente:
    - Di cosa parla (tema centrale)
@@ -77,6 +79,8 @@ Una volta capito il contenuto:
    - Identifica progetti/aree pertinenti
    - Calcola implicazioni o connessioni con altri file
    - Proponi categorizzazione (tag esistenti o nuovi)
+
+**A fine FASE 2**, setta nel frontmatter del file inbox `enriched: YYYY-MM-DD` (oggi) prima di passare alla FASE 3. Questo evita re-enrichment se il file dovesse essere ri-toccato.
 
 2. **Gap identification.** Identifica le informazioni mancanti per archiviare correttamente. Esempi:
    - Non so quale stakeholder ha preso questa decisione
