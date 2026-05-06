@@ -23,16 +23,8 @@ Why this meeting exists, who called it, what decision is needed.
 ---
 ## Discussion (raw notes)
 
-
----
-## Decisions taken
-- 
----
-## Action items
-
----
-## Open questions
-- 
 ---
 ## References
 - 
+
+<!--Note: la sezione `## Discussion (enriched)` viene aggiunta da `/enrich` o `/daily` e include interpretazione, connessioni al vault, decisioni dedotte, action items e open questions. Non aggiungere manualmente sezioni Decisions/Actions/Open questions: le inghiotte l'enriched.--> 
