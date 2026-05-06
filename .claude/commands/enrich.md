@@ -33,13 +33,13 @@ Se ambiguo → fermati e chiedi a user. Massimo 3 domande mirate per file. Mai c
 
 ### FASE 2 — Enrichment in-file
 
-1. **Aggiungi la sezione `## Discussion (enriched)`** subito dopo la sezione raw notes del file inbox. Mai modificare i raw notes. La sezione enriched:
-   - Interpreta gli appunti terse
-   - Linka entità con `[[wikilink]]`
-   - Espone decisioni implicite e domande aperte
-   - Identifica connessioni con il vault esistente
-   - Compila `Decisions taken`, `Action items`, `Open questions` se deducibili
-
+1. **Aggiungi la sezione `## Discussion (enriched)`** subito dopo la sezione raw notes del file inbox. Mai modificare i raw notes. La sezione enriched include tutto:
+   - Interpreta gli appunti presi
+   - Link a entità con `[[wikilink]]`
+   - Connessioni con il vault esistente      
+   - Sotto-sezioni interne (in markdown bold o `###`): **Decisions taken**, **Action items**, **Open questions** — compilate se deducibili                                          
+   - Il template `meeting_inbox.md` non ha più sezioni separate per Decisions/Actions/Open questions: tutto vive dentro l'enriched
+ 
 2. **Auto-enrichment first.** Tutto il deducibile va fatto adesso.
 
 3. **Gap triage:**
