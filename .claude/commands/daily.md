@@ -40,6 +40,8 @@ Poi esegui la pipeline a 4 fasi: prima la FASE 0 (todo triage), poi le 3 fasi di
 
 Per ogni file in `/inbox/`:
 
+**Anti-rework.** Leggi prima il frontmatter del file. Se `enriched: YYYY-MM-DD` è valorizzato, **skippa FASE 1 + FASE 2**: l'enrichment è già stato fatto (probabilmente via `/enrich`). Usa direttamente la sezione `## Discussion (enriched)` esistente come base per la FASE 3. Se `enriched: false` o assente → procedi normalmente.   
+
 1. Leggi il file grezzo per intero.
 2. Identifica esplicitamente:
    - Di cosa parla (tema centrale)
@@ -99,7 +101,7 @@ Solo dopo Fase 1 e 2:
 
 5. **Resources sub-flow (se applicabile):** se l'input è un documento-fonte di terzi (PDF normativo, annual report, white paper), chiedi a user se resource o extract-only, poi esegui il sub-flow completo (artefatto in `/resources/YYYY-MM/` + `__meta.md` + nota derivata in `/notes`).
 
-6. **Archive dell'originale:** rinomina aggiungendo `YYYY-MM-DD_` al filename se non già presente, e sposta da `/inbox/` a `/inbox/_archive/YYYY-MM/`.
+6. **Archive dell'originale:** rinomina aggiungendo `YYYY-MM-DD_` al filename se non già presente, e sposta da `/inbox/` a `/inbox/_archive/YYYY-MM/`. Setta anche `processed: true` nel frontmatter prima dell'archive (se presente). Se la FASE 1+2 è stata skippata grazie al flag `enriched`, segnalalo nel report.   
 
 ---
 
